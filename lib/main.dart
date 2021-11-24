@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/wellcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,80 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-      ),
-      home: const MyHomePage(title: 'Count project'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  _incrementCounter() {
-    setState(() {
-      print(_counter);
-      _counter++;
-    });
-  }
-
-  _decrementCounter() {
-    setState(() {
-      print(_counter);
-      _counter--;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            TextButton(
-              onPressed: () {
-                print('Add funttion check');
-                _incrementCounter();
-              },
-              child: new Text('Add'),
-            ),
-            TextButton(
-              onPressed: () {
-                print('Subtract funttion check');
-                _decrementCounter();
-              },
-              child: new Text('Sybtract'),
-            ),
-          ],
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(color: Colors.black54),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
+      home: const WellcomeScreen(),
     );
   }
 }
