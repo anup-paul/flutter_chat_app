@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class WellcomeScreen extends StatefulWidget {
@@ -42,7 +43,9 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                   color: Colors.lightBlueAccent,
                   borderRadius: BorderRadius.circular(30),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/loginScreen');
+                    },
                     height: 42,
                     minWidth: 200,
                     child: const Text(
@@ -57,7 +60,9 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                   color: Colors.blueAccent,
                   borderRadius: BorderRadius.circular(30),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/registrationScreen');
+                    },
                     child: const Text(
                       'Registration',
                       style:
