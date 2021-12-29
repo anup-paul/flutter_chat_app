@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/chat_screen.dart';
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:chat_app/screens/register_screen.dart';
 import 'package:chat_app/screens/wellcome_screen.dart';
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //home: const WellcomeScreen(),
-      initialRoute: '/welcomeScreen',
+      initialRoute: WellcomeScreen.id,
       routes: {
-        '/welcomeScreen': (context) => const WellcomeScreen(),
+        WellcomeScreen.id: (context) => const WellcomeScreen(),
         '/loginScreen': (context) => LoginScreen(),
-        '/registrationScreen': (context) => RegisterScreen()
+        '/registrationScreen': (context) => RegisterScreen(),
+        '/chatScreen': (context) => ChatScreen()
       },
     );
   }
