@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class WellcomeScreen extends StatefulWidget {
   const WellcomeScreen({Key? key}) : super(key: key);
-  static String id = '/welcomeScreen';
+  static const String id = '/welcomeScreen';
 
   @override
   _WellcomeScreenState createState() => _WellcomeScreenState();

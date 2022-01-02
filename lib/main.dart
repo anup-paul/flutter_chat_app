@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
       initialRoute: WellcomeScreen.id,
       routes: {
         WellcomeScreen.id: (context) => const WellcomeScreen(),
-        '/loginScreen': (context) => LoginScreen(),
-        '/registrationScreen': (context) => RegisterScreen(),
-        '/chatScreen': (context) => ChatScreen()
+        LoginScreen.id: (context) => LoginScreen(),
+        RegisterScreen.id: (context) => RegisterScreen(),
+        ChatScreen.id: (context) => ChatScreen()
       },
     );
   }
