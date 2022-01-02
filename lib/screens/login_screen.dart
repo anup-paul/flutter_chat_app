@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               TextFormField(
                 decoration: const InputDecoration(

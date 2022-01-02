@@ -54,7 +54,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               TextFormField(
                 decoration: const InputDecoration(
@@ -80,7 +80,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Material(
                 color: Colors.blueAccent,
