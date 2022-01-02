@@ -20,9 +20,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                height: 150,
-                child: Image.asset('assets/images/chat_logo.jpg'),
+              Hero(
+                tag: 'logo',
+                child: Container(
+                  height: 150,
+                  child: Image.asset('assets/images/chat_logo.jpg'),
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -37,14 +40,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.lightBlue, width: 3),
+                    borderSide: BorderSide(color: Colors.blueAccent, width: 3),
                     borderRadius: BorderRadius.all(
                       Radius.circular(32),
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 3),
+                    borderSide: BorderSide(color: Colors.blueGrey, width: 3),
                     borderRadius: BorderRadius.all(
                       Radius.circular(32),
                     ),
@@ -64,14 +66,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.lightBlue, width: 3),
+                    borderSide: BorderSide(color: Colors.blueAccent, width: 3),
                     borderRadius: BorderRadius.all(
                       Radius.circular(32),
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.lightBlueAccent, width: 3),
+                    borderSide: BorderSide(color: Colors.blueGrey, width: 3),
                     borderRadius: BorderRadius.all(
                       Radius.circular(32),
                     ),
@@ -91,7 +92,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: const Padding(
                     padding: EdgeInsets.all(20),
                     child: Text(
-                      'Registration',
+                      'Submit',
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
                     ),

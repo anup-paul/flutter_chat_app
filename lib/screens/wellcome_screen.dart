@@ -24,9 +24,12 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    child: Image.asset('assets/images/chat_logo.jpg'),
-                    height: 60,
+                  Hero(
+                    tag: 'logo',
+                    child: Container(
+                      child: Image.asset('assets/images/chat_logo.jpg'),
+                      height: 60,
+                    ),
                   ),
                   const Text(
                     'We Chat',
@@ -58,18 +61,18 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                 ),
               ),
               Material(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(30),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/registrationScreen');
-                    },
-                    child: const Text(
-                      'Registration',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-                    ),
-                  )),
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(30),
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/registrationScreen');
+                  },
+                  child: const Text(
+                    'Registration',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
