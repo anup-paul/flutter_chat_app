@@ -9,7 +9,25 @@ class WellcomeScreen extends StatefulWidget {
   _WellcomeScreenState createState() => _WellcomeScreenState();
 }
 
-class _WellcomeScreenState extends State<WellcomeScreen> {
+class _WellcomeScreenState extends State<WellcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  // ignore: must_call_super
+  void initState() {
+    controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this,
+      upperBound: 100.0,
+    );
+    controller.forward();
+    controller.addListener(() {
+      setState(() {});
+      print(controller.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,13 +46,13 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                     tag: 'logo',
                     child: Container(
                       child: Image.asset('assets/images/chat_logo.jpg'),
-                      height: 60,
+                      height: controller.value,
                     ),
                   ),
                   const Text(
                     'We Chat',
                     style: TextStyle(
-                      fontSize: 45.0,
+                      fontSize: 60.0,
                       fontWeight: FontWeight.w900,
                       color: Colors.blueAccent,
                     ),
