@@ -13,15 +13,28 @@ class _WellcomeScreenState extends State<WellcomeScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
 
+  late Animation animation;
+
   @override
   // ignore: must_call_super
   void initState() {
     controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 3),
       vsync: this,
-      upperBound: 100.0,
+      //upperBound: 100.0,
     );
+
+    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+
     controller.forward();
+    // animation.addStatusListener((status) {
+    //   print(status);
+    //   if (status == AnimationStatus.completed) {
+    //     controller.reverse(from: 1.0);
+    //   } else if (status == AnimationStatus.dismissed) {
+    //     controller.forward();
+    //   }
+    // });
     controller.addListener(() {
       setState(() {});
       print(controller.value);
@@ -29,10 +42,17 @@ class _WellcomeScreenState extends State<WellcomeScreen>
   }
 
   @override
+  // ignore: must_call_super
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white.withOpacity(animation.value), 
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
@@ -46,7 +66,8 @@ class _WellcomeScreenState extends State<WellcomeScreen>
                     tag: 'logo',
                     child: Container(
                       child: Image.asset('assets/images/chat_logo.jpg'),
-                      height: controller.value,
+                      //height: controller.value,
+                      height: (animation.value) * 100,
                     ),
                   ),
                   const Text(
