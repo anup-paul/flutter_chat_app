@@ -1,4 +1,7 @@
+import 'package:chat_app/components/rounded_button.dart';
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -32,73 +35,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 30,
               ),
               TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "Enter Your Email",
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32.0),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 3),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueGrey, width: 3),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                ),
-              ),
+                  decoration: kTextFieldDecoration.copyWith(
+                      hintText: "Enter your email")),
               const SizedBox(
                 height: 15,
               ),
               TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "Enter Your Password",
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32.0),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 3),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueGrey, width: 3),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(32),
-                    ),
-                  ),
-                ),
-              ),
+                  decoration: kTextFieldDecoration.copyWith(
+                      hintText: "Enter your Password")),
               const SizedBox(
                 height: 20,
               ),
-              Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30),
-                child: MaterialButton(
-                  onPressed: () {
-                    //Navigator.pushNamed(context, '/registrationScreen');
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text(
-                      'Login',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
-                    ),
-                  ),
-                ),
+              RoundedButtton(
+                onPresed: () {},
+                title: "Login",
+                buttoncolor: Colors.blueAccent,
               ),
             ],
           ),

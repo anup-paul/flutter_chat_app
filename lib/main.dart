@@ -14,11 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        textTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.black54),
-        ),
-      ),
+
       //home: const WellcomeScreen(),
       initialRoute: WellcomeScreen.id,
       routes: {

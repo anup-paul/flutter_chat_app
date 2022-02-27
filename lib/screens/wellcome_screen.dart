@@ -1,5 +1,8 @@
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+
+import '../components/rounded_button.dart';
 
 class WellcomeScreen extends StatefulWidget {
   const WellcomeScreen({Key? key}) : super(key: key);
@@ -52,7 +55,7 @@ class _WellcomeScreenState extends State<WellcomeScreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white.withOpacity(animation.value), 
+        backgroundColor: Colors.white.withOpacity(animation.value),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
@@ -67,50 +70,34 @@ class _WellcomeScreenState extends State<WellcomeScreen>
                     child: Container(
                       child: Image.asset('assets/images/chat_logo.jpg'),
                       //height: controller.value,
-                      height: (animation.value) * 100,
+                      height: (animation.value) * 80,
                     ),
                   ),
-                  const Text(
-                    'We Chat',
-                    style: TextStyle(
-                      fontSize: 60.0,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.blueAccent,
+                  const FittedBox(
+                    child: Text(
+                      'We Chat',
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.blueAccent,
+                      ),
                     ),
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Material(
-                  color: Colors.lightBlueAccent,
-                  borderRadius: BorderRadius.circular(30),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/loginScreen');
-                    },
-                    height: 42,
-                    minWidth: 200,
-                    child: const Text(
-                      "Login",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-                    ),
-                  ),
-                ),
+              RoundedButtton(
+                buttoncolor: Colors.lightBlueAccent,
+                title: "Log In",
+                onPresed: () {
+                  Navigator.pushNamed(context, '/loginScreen');
+                },
               ),
-              Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/registrationScreen');
-                  },
-                  child: const Text(
-                    'Registration',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-                  ),
-                ),
+              RoundedButtton(
+                buttoncolor: Colors.blueAccent,
+                title: "Registration",
+                onPresed: () {
+                  Navigator.pushNamed(context, '/registrationScreen');
+                },
               ),
             ],
           ),
@@ -119,3 +106,4 @@ class _WellcomeScreenState extends State<WellcomeScreen>
     );
   }
 }
+

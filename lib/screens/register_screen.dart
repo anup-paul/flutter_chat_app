@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+
+import '../components/rounded_button.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key? key}) : super(key: key);
@@ -31,6 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 30,
               ),
               TextFormField(
+                onChanged: (value){},
                 decoration: const InputDecoration(
                   hintText: "Enter Your Email",
                   hintStyle: TextStyle(color: Colors.grey),
@@ -57,6 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 15,
               ),
               TextFormField(
+                onChanged: (value){},
                 decoration: const InputDecoration(
                   hintText: "Enter Your Password",
                   hintStyle: TextStyle(color: Colors.grey),
@@ -82,22 +87,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(
                 height: 30,
               ),
-              Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30),
-                child: MaterialButton(
-                  onPressed: () {
-                    //Navigator.pushNamed(context, '/registrationScreen');
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Text(
-                      'Submit',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
-                    ),
-                  ),
-                ),
+              RoundedButtton(
+                onPresed: () {},
+                title: "Submit",
+                buttoncolor: Colors.blueAccent,
               ),
             ],
           ),
